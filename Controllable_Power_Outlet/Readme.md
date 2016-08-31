@@ -14,4 +14,4 @@ Materials Used:
 - Any breadboard
 - Jumper cables
 
-<!--- (http://trykramdown.herokuapp.com/) -->
+<!--- (http://trykramdown.herokuapp.com/) (https://georgedewar.wordpress.com/2015/07/27/using-pid-on-an-arduino-to-control-an-electric-heater/)-->
