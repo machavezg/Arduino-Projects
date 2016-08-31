@@ -1,5 +1,5 @@
 <h1>Heater Temperature Controller</h1>
-<br>This projects is based on the SparkFun <a target="_blank" href="https://www.sparkfun.com/tutorials/119">Controllable Power Outlet</a>.
+<br>This projects is based on the SparkFun <a target="_blank" rel="noopener" href="https://www.sparkfun.com/tutorials/119">Controllable Power Outlet</a>.
 <br>Materials Used:
 <li><a target="_blank" href="https://amzn.com/B00X725XMI">TOPELE 20 Amp 125 Volt Weather-Resistant GFCI Outlet</a> 
 <li><a target="_blank" href="https://www.sparkfun.com/products/13815">SparkFun Beefcake Relay Control Kit (Ver. 2.0)</a>
