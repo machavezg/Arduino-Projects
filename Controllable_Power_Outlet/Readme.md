@@ -14,4 +14,44 @@ Materials Used:
 - Any breadboard
 - Jumper cables
 
+<!--- --------------------------------------------PROGRESS 8/29/2016-------------------------------------------------------- -->
+## <br>Progress: 8/29/2016</br>
+<p align="center">
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4538.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4539.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4540.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4541.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4542.JPG?raw=true" width="400" align="middle">
+  </br>
+</p>
+
+<!--- --------------------------------------------PROGRESS 9/01/2016-------------------------------------------------------- -->
+## <br>Completed: 9/01/2016</br>
+<p align="center">
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4552.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4553.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4554.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4555.JPG?raw=true" width="400" align="middle">
+  </br>
+  <br>
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4557.JPG?raw=true" width="400" align="middle">
+  </br>
+</p>
+
 <!--- (http://trykramdown.herokuapp.com/) (https://georgedewar.wordpress.com/2015/07/27/using-pid-on-an-arduino-to-control-an-electric-heater/)-->
