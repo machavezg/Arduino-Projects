@@ -18,7 +18,9 @@ Materials Used:
 ## <br>Progress: 8/29/2016</br>
 <p align="center">
   <br>
+    <a href="google.com">
     <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4538_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
     <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4539_THM.JPG?raw=true" width="400" align="middle">
