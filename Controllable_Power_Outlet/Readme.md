@@ -18,10 +18,10 @@ Materials Used:
 ## <br>Progress: 8/29/2016</br>
 <p align="center">
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4538.JPG?raw=true" width="400" align="middle">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4538_THM.JPG?raw=true" width="200" align="middle">
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4539.JPG?raw=true" width="400" align="middle">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4539_THM.JPG?raw=true" width="400" align="middle">
   </br>
   <br>
     <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4540.JPG?raw=true" width="400" align="middle">
