@@ -23,16 +23,24 @@ Materials Used:
     </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4539_THM.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4539.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4539_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4540.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4540.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4540_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4541.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4541.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4541_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4542.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4542.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4542_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
 </p>
 
@@ -40,19 +48,29 @@ Materials Used:
 ## <br>Completed: 9/01/2016</br>
 <p align="center">
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4552.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4552.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4552_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4553.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4553.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4553_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4554.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4554.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4554_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4555.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4555.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4555_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
   <br>
-    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4557.JPG?raw=true" width="400" align="middle">
+    <a href="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4557.JPG?raw=true">
+    <img src="https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Controllable_Power_Outlet/Pictures/IMG_4557_THM.JPG?raw=true" width="200" align="middle">
+    </a>
   </br>
 </p>
 
