@@ -12,3 +12,4 @@ MG995 servos and learn their angular limitations with respect to my robot arm
 <p>https://learn.adafruit.com/downloads/pdf/adafruit-16-channel-pwm-slash-servo-shield.pdf
 <p>Servos and angles with pulse lengths:
 <p>http://ftcforum.usfirst.org/archive/index.php/t-6340.html
+##<p>http://inovizionsroboarm.blogspot.com/
