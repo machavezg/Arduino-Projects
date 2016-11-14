@@ -10,3 +10,5 @@ MG995 servos and learn their angular limitations with respect to my robot arm
 <p>http://www.trossenrobotics.com/p/phantomx-ax-12-reactor-robot-arm.aspx
 <p>http://www.trossenrobotics.com/robotgeek-gripper
 <p>https://learn.adafruit.com/downloads/pdf/adafruit-16-channel-pwm-slash-servo-shield.pdf
+<p>Servos and angles with pulse lengths:
+<p>http://ftcforum.usfirst.org/archive/index.php/t-6340.html
