@@ -5,11 +5,12 @@
 - serLCD library from https://github.com/scogswell/ArduinoSerLCD
  
 ## Instructions:
-### LM35 Pins:
+#### LM35 Pins:
 - (+) to 3.3v and AREF
 - (-) to GND
 - (~) Signal to A0
-### LCD Pins:
+
+#### LCD Pins:
 - (+) 5V pin to 5V 
 - (-) GND pin to GND
 - (RX) RX pin to Digital 2
