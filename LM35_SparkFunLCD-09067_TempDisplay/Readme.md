@@ -1,4 +1,3 @@
-# ReadMe
 ## Ingredients:
 - LM35 Sensor
 - Sparkfun Serial LCD-09067
