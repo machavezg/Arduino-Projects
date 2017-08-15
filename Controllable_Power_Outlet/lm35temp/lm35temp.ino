@@ -53,11 +53,18 @@ void setup(){
   //Temerature Controller Setup
   tempDualControlSetup();
 
-  cleanSetup();
-  delay(1000);
+  //RTC DS3231 Setup
+  RTCSetup();
+
+  //Setup the temp reading accuracy code
+  cleanSetup();  
+  
+  //Wait for Console to start
+  delay(3000);
 }
 
 void loop(){
+  
   //Printing the Temp readings to LCD
   printTempFahLCD(tempFahrenheit(sensor1));
   
@@ -75,8 +82,15 @@ void loop(){
   
   //For dual Fahrenheit Debug uncomment line below
   //printTempSerialDebug(tempFahrenheit(sensor1),tempFahrenheit(sensor2));
-  //delay(2000);
-  //cleanReading(sensor1);
+
+  //RTC Debug Power clock controller started, should loop through first to make sure it should be running
+  //RTCPowerControllerDebug();
+  
+  //Clean display reading
+  cleanReading(sensor1);
+    
+  delay(1000);
+  
 }
 
 

@@ -54,13 +54,11 @@ void printTempLCD(float tempC, float tempF){
   theLCD.print(tempC,0);theLCD.print(char(223));theLCD.print("C    ");
   theLCD.setPosition(2,7);
   theLCD.print(tempF,0);theLCD.print(char(223));theLCD.print("F    ");
-  delay(tim);
 }
 
 void printTempFahLCD(float tempF){
   theLCD.setPosition(1,6);
   theLCD.print(tempF,0);theLCD.print(char(223));theLCD.print("F     ");
-  delay(tim);
 }
 
 //Prints Dual Fahrenheit Temp readings
@@ -69,7 +67,6 @@ void printDualFTempLCD(float tempF1, float tempF2){
   theLCD.print(tempF1,0);theLCD.print(char(223));theLCD.print("F ");
   theLCD.setPosition(2,7);
   theLCD.print(tempF2,0);theLCD.print(char(223));theLCD.print("F ");
-  delay(tim);
 }
 
 //Prints to debug screen
@@ -82,7 +79,6 @@ void printTempSerialDebug(float tempC, float tempF){
   Serial.print("\t");
   Serial.print(tempF);
   Serial.println();
-  delay(tim);
 }
 
 //Prints Dual Fahrenheit temp readings to debug screen
@@ -95,5 +91,4 @@ void printDualFTempDebug(float tempF1, float tempF2){
   Serial.print("\t");
   Serial.print(tempF2);
   Serial.println();
-  delay(tim);
 }

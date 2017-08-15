@@ -26,14 +26,14 @@ void tempDualControlSetup(){
 
 // Control one relay, pin 12 or 8, PICK ONE!!
 void tempControl(float tempRead){
-  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp )){ //true as long as < minTemp
+  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() ){ //true as long as < minTemp
     digitalWrite(relayAPin, HIGH);
   } else if (control == 1 && tempRead >= maxTemp ) {
     digitalWrite(relayAPin, LOW);
     control = 0;
   } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
     digitalWrite(relayAPin, LOW);
-  } else if ( tempRead <= minTemp ) {
+  } else if ( tempRead <= minTemp && RTCPowerController() ) {
     digitalWrite(relayAPin, HIGH);
     control = 1;
   } else {
@@ -44,7 +44,7 @@ void tempControl(float tempRead){
 // Control two relays, pin 12 and 8
 void tempDualControl(float tempRead){
   //Define min temp and max temp at top
-  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp )){ //true as long as < minTemp
+  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() ){ //true as long as < minTemp
     digitalWrite(relayAPin, HIGH);
     digitalWrite(relayBPin, HIGH);
   } else if (control == 1 && tempRead >= maxTemp ) {
@@ -54,7 +54,7 @@ void tempDualControl(float tempRead){
   } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
     digitalWrite(relayAPin, LOW);
     digitalWrite(relayBPin, LOW);
-  } else if ( tempRead <= minTemp ) {
+  } else if ( tempRead <= minTemp && RTCPowerController() ) {
     digitalWrite(relayAPin, HIGH);
     digitalWrite(relayBPin, HIGH);
     control = 1;
