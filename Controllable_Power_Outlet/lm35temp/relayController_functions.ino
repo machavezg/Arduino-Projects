@@ -1,66 +1,59 @@
 // Min and Max temperature settings in Degrees Fahrenheit
-const float minTemp = 118;
-const float maxTemp = 124;
+extern const float minTemp;
+extern const float maxTemp;
 //The pins that will be controlling the relay
 //Pin 13 ledPin is for debugging purposes only
-const int relayAPin = 8;
-const int relayBPin = 12;
-const int ledPin = 13;
+extern const int relayAPin;
+extern const int relayBPin;
+extern const int ledPin;
 // Calling temp from tempSensor_functions
 extern float temp;
 // control is used for the temperature controller function, 1 = On, 0 = Off. 
 int control = 1;
 
-void tempControlSetup(){
-  pinMode(ledPin, OUTPUT);
-  pinMode(relayAPin, OUTPUT);
-}
-
-void tempDualControlSetup(){
-  pinMode(ledPin, OUTPUT);
-  pinMode(relayAPin, OUTPUT);
-  pinMode(relayBPin, OUTPUT);
-  digitalWrite(relayAPin, LOW);
-  digitalWrite(relayBPin, LOW);
-}
-
-// Control one relay, pin 12 or 8, PICK ONE!!
-void tempControl(float tempRead){
-  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() ){ //true as long as < minTemp
-    digitalWrite(relayAPin, HIGH);
-  } else if (control == 1 && tempRead >= maxTemp ) {
-    digitalWrite(relayAPin, LOW);
-    control = 0;
-  } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
-    digitalWrite(relayAPin, LOW);
-  } else if ( tempRead <= minTemp && RTCPowerController() ) {
-    digitalWrite(relayAPin, HIGH);
-    control = 1;
-  } else {
-    digitalWrite(relayAPin, LOW);
+void tempControlSetup(int numberOfSensors){
+  switch (numberOfSensors) {
+    case 1:
+       pinMode(ledPin, OUTPUT);
+       pinMode(relayAPin, OUTPUT);
+       break;
+    case 2:
+       pinMode(ledPin, OUTPUT);
+       pinMode(relayAPin, OUTPUT);
+       pinMode(relayBPin, OUTPUT);
+       digitalWrite(relayAPin, LOW);
+       digitalWrite(relayBPin, LOW);
+       break;
   }
 }
 
-// Control two relays, pin 12 and 8
-void tempDualControl(float tempRead){
-  //Define min temp and max temp at top
+// Control oneor two relay, pin 12 or 8, PICK ONE!!
+//(tempRead is the input temperature read by the temp sensor)
+void tempControl(float tempRead, int oneOrTwo){
   if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() ){ //true as long as < minTemp
-    digitalWrite(relayAPin, HIGH);
-    digitalWrite(relayBPin, HIGH);
+    numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
   } else if (control == 1 && tempRead >= maxTemp ) {
-    digitalWrite(relayAPin, LOW);
-    digitalWrite(relayBPin, LOW);
+    numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
     control = 0;
   } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
-    digitalWrite(relayAPin, LOW);
-    digitalWrite(relayBPin, LOW);
+    numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
   } else if ( tempRead <= minTemp && RTCPowerController() ) {
-    digitalWrite(relayAPin, HIGH);
-    digitalWrite(relayBPin, HIGH);
+    numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
     control = 1;
   } else {
-    digitalWrite(relayAPin, LOW);
-    digitalWrite(relayBPin, LOW);
+    numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+  }
+}
+
+void numberOfHeaters(int oneOrTwo, bool highOrLow) {
+  switch ( oneOrTwo ) {
+    case 1:
+       digitalWrite(relayAPin, highOrLow);
+       break;
+    case 2:
+       digitalWrite(relayAPin, highOrLow);
+       digitalWrite(relayBPin, highOrLow);
+       break;
   }
 }
 

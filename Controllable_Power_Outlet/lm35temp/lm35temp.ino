@@ -1,9 +1,12 @@
 /* ReadMe
  * Ingredients:
+ * -Arduino Uno R3
  * -LM35 Sensor
  * -Sparkfun Serial LCD-09067
  * -serLCD library from https://github.com/scogswell/ArduinoSerLCD
  * -Sparkfun Beefcake Relay Control Kit (Ver.2.0)
+ * -Adafruit DS3231
+ * -Adafruit ProtoShield Uno
  * 
  * Instructions:
  *  LM35 Pins:
@@ -17,8 +20,14 @@
  *  Beefcake Pins;
  *    -(+) 5V pin to 5V ICSP
  *    -(-) GND pin to GND ICSP
- *    -(CTRL) pin to Digital 12
- *  
+ *    -(CTRL1) pin to Digital 8
+ *    If 2 Relays
+ *    -(CTRL2) pin to Digital 12
+ *  DS3231 Pins:
+ *    -(+) Vin pin to 5V
+ *    -(-) to GND
+ *    -(SCL) to Analog 5
+ *    -(SDA) to Analog 4
  *  ICSP Pin Out (3):
  *  ( )( )( )
  *  (-)( )(+)
@@ -51,7 +60,7 @@ void setup(){
   //printFTempHeader();
 
   //Temerature Controller Setup
-  tempDualControlSetup();
+  tempControlSetup(2);  //tempControlSetup(int oneOrTwo) 1: for one heater, 2: for two heaters
 
   //RTC DS3231 Setup
   RTCSetup();
@@ -72,7 +81,7 @@ void loop(){
   //printTempSerialDebug(tempCelsius(sensor1),tempFahrenheit(sensor1));
 
   //Temperature Controller see relayController_functions
-  tempDualControl(tempFahrenheit(sensor1));
+  tempControl(tempFahrenheit(sensor1), 2);
   
   //Uncomment to Debug Temperature Controller see relayController_functions
   //tempControlDebug(tempFahrenheit(sensor1));
