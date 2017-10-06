@@ -164,3 +164,34 @@ void heater(){
     Serial.println("HEATER IS OFF");
   }
 }
+
+
+// Control oneor two relay, pin 12 or 8, PICK ONE!!
+//(tempRead is the input temperature read by the temp sensor)
+void tempControl(float tempRead, int oneOrTwo){
+  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() ){ //true as long as < minTemp
+    numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
+  } else if (control == 1 && tempRead >= maxTemp ) {
+    numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+    control = 0;
+  } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
+    numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+  } else if ( tempRead <= minTemp && RTCPowerController() ) {
+    numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
+    control = 1;
+  } else {
+    numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+  }
+}
+
+void numberOfHeaters(int oneOrTwo, bool highOrLow) {
+  switch ( oneOrTwo ) {
+    case 1:
+       digitalWrite(relayAPin, highOrLow);
+       break;
+    case 2:
+       digitalWrite(relayAPin, highOrLow);
+       digitalWrite(relayBPin, highOrLow);
+       break;
+  }
+}
