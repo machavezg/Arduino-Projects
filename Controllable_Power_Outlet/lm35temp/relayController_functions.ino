@@ -29,19 +29,24 @@ void tempControlSetup(int numberOfSensors){
 
 // Control oneor two relay, pin 12 or 8, PICK ONE!!
 //(tempRead is the input temperature read by the temp sensor)
-void tempControl(float tempRead, int oneOrTwo){
+bool tempControl(float tempRead, int oneOrTwo){
   if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() ){ //true as long as < minTemp
     numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
+    return true;
   } else if (control == 1 && tempRead >= maxTemp ) {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
     control = 0;
+    return false;
   } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+    return false;
   } else if ( tempRead <= minTemp && RTCPowerController() ) {
     numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
     control = 1;
+    return true;
   } else {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+    return false;
   }
 }
 

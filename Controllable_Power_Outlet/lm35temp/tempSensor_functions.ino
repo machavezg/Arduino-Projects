@@ -8,16 +8,18 @@ extern const int sensor2; // Assigning analog pin A1 to variable 'sensor2'
 float temp = tempFahrenheit(sensor1);
 
 //Sets up the LM35 sensor
-void LM35setup(){
-  pinMode(sensor1,INPUT); // Configuring pin A0 as input
-  analogReference(EXTERNAL);
-}
-
-//Setup dual LM35s for reading
-void LM35DualSetup(){
-  pinMode(sensor1, INPUT);
-  pinMode(sensor2, INPUT);
-  analogReference(EXTERNAL);
+void LM35setup(int numberOfSensors){
+  switch (numberOfSensors) {
+    case 1:
+      pinMode(sensor1,INPUT); // Configuring pin A0 as input
+      analogReference(EXTERNAL);
+      break;
+    case 2:
+      pinMode(sensor1, INPUT);
+      pinMode(sensor2, INPUT);
+      analogReference(EXTERNAL);
+      break;
+  }
 }
 
 //Converts sensor data to Celsius

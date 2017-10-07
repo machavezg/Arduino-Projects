@@ -10,7 +10,6 @@
 
 SoftwareSerial NSS(0,2);
 SerLCD theLCD(NSS);
-const int tim = 500;
 extern const float minTemp;
 extern const float maxTemp;
 
@@ -22,7 +21,6 @@ void LCDsetup(){
   theLCD.begin();
   theLCD.clear();
   //Give time for screen to initialize
-  delay(tim);
 }
 
 //Prints the temp header text

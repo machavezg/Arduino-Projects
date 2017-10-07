@@ -20,3 +20,7 @@ int heaterStopTime = 18;
 //
 String heaterDayOff_1 = "Saturday";
 String heaterDayOff_2 = "Sunday";
+
+/*--------------------------Temp Cycle Variables--------------------------------*/
+//Time variables
+String adhesiveType = "1508WHITE";

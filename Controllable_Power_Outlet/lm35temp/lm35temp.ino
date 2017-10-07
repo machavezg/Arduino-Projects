@@ -48,7 +48,7 @@ void setup(){
   LCDsetup();
   
   //LM35 being initialized
-  LM35setup();
+  LM35setup(1);
   
   //Displaying TempC and TempF labels to lcd permanently
   printTempHeaderFah();
@@ -81,7 +81,7 @@ void loop(){
   //printTempSerialDebug(tempCelsius(sensor1),tempFahrenheit(sensor1));
 
   //Temperature Controller see relayController_functions
-  tempControl(tempFahrenheit(sensor1), 2);
+  tempControl(tempFahrenheit(sensor1), 2); //tempControl(tempRead, oneOrTwo) tempRead is the temperature input from the sensor, oneOrTwo 1: for one heater, 2: for two heaters
   
   //Uncomment to Debug Temperature Controller see relayController_functions
   //tempControlDebug(tempFahrenheit(sensor1));
@@ -96,7 +96,7 @@ void loop(){
   //RTCPowerControllerDebug();
   
   //Clean display reading
-  cleanReading(sensor1);
+  //cleanReading(sensor1);
     
   delay(1000);
   
