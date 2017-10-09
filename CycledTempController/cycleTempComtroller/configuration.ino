@@ -4,6 +4,8 @@ const float minTempSys1 = 78;
 const float maxTempSys1 = 82;
 const float minTempSys2 = 88;
 const float maxTempSys2 = 92;
+const float firstTemp = 80.0;
+const float secondTemp = 90.0;
 //The pins that will be controlling the relay
 //Pin 13 ledPin is for debugging purposes only
 const int relayAPin = 8;

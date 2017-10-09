@@ -22,8 +22,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  heater(tempFahrenheit(sensor1), 1);
-  
+//  heater(tempFahrenheit(sensor1), 1);
+  cycleHeat( tempFahrenheit(sensor1), 1 , 80.0 , 90.0);
   //Printing the Temp readings to LCD
   printTempFahLCD(tempFahrenheit(sensor1));
 

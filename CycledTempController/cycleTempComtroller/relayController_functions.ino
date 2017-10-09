@@ -27,22 +27,32 @@ void tempControlSetup(int numberOfSensors){
 
 // Control oneor two relay, pin 12 or 8, PICK ONE!!
 //(tempRead is the input temperature read by the temp sensor)
-bool tempControl(float tempRead, int oneOrTwo, float minTemp, float maxTemp){
-  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) ){ //true as long as < minTemp
+bool tempControl(float tempRead, int oneOrTwo, float minTemp, float maxTemp, bool onOrOff)
+{
+  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && onOrOff )
+  { //true as long as < minTemp
     numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
     return true;
-  } else if (control == 1 && tempRead >= maxTemp ) {
+  } 
+  else if (control == 1 && tempRead >= maxTemp && onOrOff) 
+  {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
     control = 0;
     return false;
-  } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
+  } 
+  else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp) && onOrOff ) 
+  {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
     return false;
-  } else if ( tempRead <= minTemp ) {
+  } 
+  else if ( tempRead <= minTemp && onOrOff ) 
+  {
     numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
     control = 1;
     return true;
-  } else {
+  } 
+  else 
+  {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
     return false;
   }
