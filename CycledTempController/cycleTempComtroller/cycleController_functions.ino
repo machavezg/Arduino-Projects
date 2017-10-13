@@ -1,3 +1,5 @@
+
+
 extern const int led1pin;
 extern const int led2pin;
 
@@ -68,7 +70,7 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
     }
     printTime = millis();
     Serial.println("IF STATEMENT");
-    theLCD.setPosition(2,0);theLCD.print("Heating to 100F");
+    theLCD.setPosition(2,0);theLCD.print("Heating to 100F ");
   }
   
   else if ( !checkTemp(tempReading, firstCycleTemp) && !avoid && printWait(printTime))
@@ -91,7 +93,7 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
       break;
     }
     printTime = millis();
-    theLCD.setPosition(2,0);theLCD.print("100F For 90min");
+    theLCD.setPosition(2,0);theLCD.print("100F For 90min  ");
   }
   
   else if ( cycle1Complete && checkTemp(tempReading, secondCycleTemp) && !avoid1 && printWait(printTime) ) 
@@ -109,7 +111,7 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
         break;
     }
     printTime = millis();
-    theLCD.setPosition(2,0);theLCD.print("Heating to 120F");
+    theLCD.setPosition(2,0);theLCD.print("Heating to 120F ");
   }
   
   else if ( !checkTemp(tempReading, firstCycleTemp) && !avoid1 && printWait(printTime))
@@ -133,7 +135,7 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
       break;
     }
     printTime = millis();
-    theLCD.setPosition(2,0);theLCD.print("120F For 120min");
+    theLCD.setPosition(2,0);theLCD.print("120F For 120min ");
   }
   
   else if ( cycle2Complete && printWait(printTime) ) 

@@ -20,6 +20,12 @@ const int ledPin = 13; // Used for debugging
 const int sensor1 = 0; // Assigning analog pin A0 to variable 'sensor1'
 const int sensor2 = 1; // Assigning analog pin A1 to variable 'sensor2'
 
+/*Define the type of sensor that is being used to measure the temperature
+ * Type 1: LM35
+ * Type 2: TMP36
+*/
+
+const int sensorType = 2; //
 
 /*--------------------------Cycle Controller Variables--------------------------------*/
 const long heatPhase1 = 5400000; //90 minutes to milliseconds 5400000
