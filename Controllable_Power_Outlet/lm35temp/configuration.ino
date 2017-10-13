@@ -1,7 +1,7 @@
 /*--------------------------Relay Control Variables--------------------------------*/
 // Min and Max temperature settings in Degrees Fahrenheit
-const float minTemp = 118;
-const float maxTemp = 124;
+const float minTemp = 75;
+const float maxTemp = 80;
 //The pins that will be controlling the relay
 //Pin 13 ledPin is for debugging purposes only
 const int relayAPin = 8;
