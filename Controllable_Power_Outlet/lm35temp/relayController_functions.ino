@@ -1,3 +1,4 @@
+
 // Min and Max temperature settings in Degrees Fahrenheit
 extern const float minTemp;
 extern const float maxTemp;
@@ -10,6 +11,16 @@ extern const int ledPin;
 extern float temp;
 // control is used for the temperature controller function, 1 = On, 0 = Off. 
 int control = 1;
+//LED Variables
+extern bool indicatorLED;
+
+long timer = 0;
+long waitTime = 1000;
+
+//Returns false as long as the time you need to wait has not passed
+bool timeWait(long timerVar, long timeToWait) {
+  return millis() - timerVar > timeToWait;
+}
 
 void tempControlSetup(int numberOfSensors){
   switch (numberOfSensors) {
@@ -30,22 +41,65 @@ void tempControlSetup(int numberOfSensors){
 // Control oneor two relay, pin 12 or 8, PICK ONE!!
 //(tempRead is the input temperature read by the temp sensor)
 bool tempControl(float tempRead, int oneOrTwo){
-  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() ){ //true as long as < minTemp
+  if (control == 1 && (tempRead > minTemp && tempRead < maxTemp ) && RTCPowerController() )//&& timeWait(timer, waitTime) )
+  { //true as long as < minTemp
     numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
+    switch (indicatorLED) {
+      case false:
+        pixels.setPixelColor(0, pixels.Color(0,0,0));
+        pixels.show();
+        indicatorLED = true;
+        break;
+      case true:
+        pixels.setPixelColor(0, pixels.Color(0,255,0));
+        pixels.show();
+        indicatorLED = false;
+        break;
+    }
+    timer = millis();
     return true;
-  } else if (control == 1 && tempRead >= maxTemp ) {
+  } 
+  else if ( (control == 1 | control == 0)  && tempRead >= maxTemp )//&& timeWait(timer, waitTime)) 
+  {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+    pixels.setPixelColor(0, pixels.Color(0,255,0));
+    pixels.show();
     control = 0;
+    timer = millis();
     return false;
-  } else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp)) {
+  } 
+  else if ( control == 0 && (tempRead > minTemp && tempRead < maxTemp) )//&& timeWait(timer, waitTime)) 
+  {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+    pixels.setPixelColor(0, pixels.Color(0,255,0));
+    pixels.show();
+    timer = millis();
     return false;
-  } else if ( tempRead <= minTemp && RTCPowerController() ) {
+  } 
+  else if ( tempRead <= minTemp && RTCPowerController() )//&& timeWait(timer, waitTime)) 
+  {
     numberOfHeaters(oneOrTwo, HIGH);    //digitalWrite(relayAPin, HIGH);
     control = 1;
+    switch (indicatorLED) {
+      case false:
+        pixels.setPixelColor(0, pixels.Color(0,0,0));
+        pixels.show();
+        indicatorLED = true;
+        break;
+      case true:
+        pixels.setPixelColor(0, pixels.Color(0,255,0));
+        pixels.show();
+        indicatorLED = false;
+        break;
+    }
+    timer = millis();
     return true;
-  } else {
+  } 
+  else 
+  {
     numberOfHeaters(oneOrTwo, LOW);    //digitalWrite(relayAPin, LOW);
+    pixels.setPixelColor(0, pixels.Color(255,0,0));
+    pixels.show();
     return false;
   }
 }

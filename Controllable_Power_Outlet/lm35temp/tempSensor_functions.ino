@@ -1,5 +1,5 @@
 //Aref voltage
-const float aref_voltage = 3.38;//4.80;//4.98; // tie 3.3V to ARef and measure it with a multimeter
+const float aref_voltage = 3.29;//3.38;//4.80;//4.98; // tie 3.3V to ARef and measure it with a multimeter
 float tempc;  //variable to store temperature in degree Celsius
 float tempf;  //variable to store temperature in Fahreinheit 
 float vout;  //temporary variable to hold sensor reading
@@ -24,7 +24,6 @@ void LM35setup(int numberOfSensors){
 
 //Converts sensor data to Celsius
 float tempCelsius(int sensor){
-  //vout=analogRead(sensor);
   vout = cleanReading(sensor);
   vout=(vout*aref_voltage)*100;
   vout /= 1023.0;

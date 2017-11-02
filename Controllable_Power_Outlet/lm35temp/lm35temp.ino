@@ -1,3 +1,5 @@
+#include <Adafruit_NeoPixel.h>
+
 /* ReadMe
  * Ingredients:
  * -Arduino Uno R3
@@ -40,6 +42,10 @@
 extern const int sensor1; // Assigning analog pin A0 to variable 'sensor1' see tempSensor_Functions
 extern const int sensor2; // Assigning analog pin A1 to variable 'sensor2' see tempSensor_Functions
 
+extern const int PIXEL_PIN;    // Digital IO pin connected to the NeoPixels.
+extern const int PIXEL_COUNT;
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_RGB + NEO_KHZ800);
+
 void setup(){
   //Serial Mon to debug
   Serial.begin(19200);
@@ -67,6 +73,9 @@ void setup(){
 
   //Setup the temp reading accuracy code
   cleanSetup();  
+
+  //RGB LED Setup
+  RGBLedSetup();
   
   //Wait for Console to start
   delay(3000);

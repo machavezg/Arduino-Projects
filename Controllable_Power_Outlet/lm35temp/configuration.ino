@@ -1,7 +1,7 @@
 /*--------------------------Relay Control Variables--------------------------------*/
 // Min and Max temperature settings in Degrees Fahrenheit
-const float minTemp = 75;
-const float maxTemp = 80;
+const float minTemp = 78;
+const float maxTemp = 82;
 //The pins that will be controlling the relay
 //Pin 13 ledPin is for debugging purposes only
 const int relayAPin = 8;
@@ -24,3 +24,10 @@ String heaterDayOff_2 = "Sunday";
 /*--------------------------Temp Cycle Variables--------------------------------*/
 //Time variables
 String adhesiveType = "1508WHITE";
+
+
+/*--------------------------LED Variables--------------------------------*/
+bool indicatorLED = false;
+const int PIXEL_PIN = 7;    // Digital IO pin connected to the NeoPixels.
+const int PIXEL_COUNT = 1;
+
