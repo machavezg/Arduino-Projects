@@ -31,5 +31,11 @@ const int sensorType = 2; //
 const long heatPhase1 = 5400000; //90 minutes to milliseconds 5400000
 const long heatPhase2 = 7200000; //120 minutes to milliseconds 7200000
 
-const int led1pin = 6;
-const int led2pin = 7;
+const int led1pin = 5;
+const int led2pin = 6;
+
+/*--------------------------LED Variables--------------------------------*/
+bool indicatorLED = false;
+const int PIXEL_PIN = 7;    // Digital IO pin connected to the NeoPixels.
+const int PIXEL_COUNT = 1;
+

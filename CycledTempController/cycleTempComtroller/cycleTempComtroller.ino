@@ -4,23 +4,27 @@ extern const int sensor1; // Assigning analog pin A0 to variable 'sensor1' see t
 extern const float firstTemp;
 extern const float secondTemp;
 extern const int sensorType;
+extern const int PIXEL_PIN;    // Digital IO pin connected to the NeoPixels.
+extern const int PIXEL_COUNT;
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_RGB + NEO_KHZ800);
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  tempControlSetup(1);
+  tempControlSetup(2);
   LM35setup(1);
   cleanSetup();
   doorOvenSetup();
   LCDComicSetup();
   printTempCycle();
+  RGBLedSetup();
   delay(2000);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 //  heater(tempFahrenheit(sensor1), 1);
-  cycleHeat( tempFahrenheit(sensor1, sensorType), 1 , firstTemp, secondTemp);
+  cycleHeat( tempFahrenheit(sensor1, sensorType), 2 , firstTemp, secondTemp);
   //Printing the Temp readings to LCD
   printTempFahLCD(tempFahrenheit(sensor1, sensorType));
 

@@ -23,11 +23,13 @@ bool cycle2Complete = false;
 long cycle1Timer = 0;
 long cycle2Timer = 0;
 
-bool indicatorLED = false;
+extern bool indicatorLED;
 
 long printTime = 0;
 
 int count = 0;
+
+
 
 void doorOvenSetup() {
   // put your setup code here, to run once:
@@ -60,11 +62,13 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
     tempControl(tempReading, numberOfHeaters, minTempSys1, maxTempSys1, true);
     switch (indicatorLED) {
       case false:
-        digitalWrite(led1pin, LOW);
+        pixels.setPixelColor(0, pixels.Color(127,40,0));//255-80-0
+        pixels.show();
         indicatorLED = true;
         break;
       case true:
-        digitalWrite(led1pin, HIGH);
+        pixels.setPixelColor(0, pixels.Color(0,0,0));
+        pixels.show();
         indicatorLED = false;
         break;
     }
@@ -85,11 +89,13 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
     tempControl(tempReading, numberOfHeaters, minTempSys1, maxTempSys1, true);
     Serial.println("EF 2");
     Serial.println(count+=1);
-    digitalWrite(led1pin, HIGH);
+    pixels.setPixelColor(0, pixels.Color(127,40,0));
+    pixels.show();
     while(timeWait(cycle1Timer, heatPhase1-1000)) {
       cycle1Complete = true;
       Serial.println("While");
-      digitalWrite(led1pin, LOW);
+      pixels.setPixelColor(0, pixels.Color(0,0,0));
+      pixels.show();
       break;
     }
     printTime = millis();
@@ -102,11 +108,13 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
     Serial.println("EF 3");
     switch (indicatorLED) {
       case false:
-        digitalWrite(led2pin, LOW);
+        pixels.setPixelColor(0, pixels.Color(127,0,0));
+        pixels.show();
         indicatorLED = true;
         break;
       case true:
-        digitalWrite(led2pin, HIGH);
+        pixels.setPixelColor(0, pixels.Color(0,0,0));
+        pixels.show();
         indicatorLED = false;
         break;
     }
@@ -127,11 +135,13 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
     tempControl(tempReading, numberOfHeaters, minTempSys2, maxTempSys2, true);
     Serial.println("EF 5");
     Serial.println(count+=1);
-    digitalWrite(led2pin, HIGH);
-    while(timeWait(cycle2Timer, heatPhase1-1000)) {
+    pixels.setPixelColor(0, pixels.Color(127,0,0));
+    pixels.show();
+    while(timeWait(cycle2Timer, heatPhase2-1000)) {
       cycle2Complete = true;
       Serial.println("While2");
-      digitalWrite(led2pin, LOW);
+      pixels.setPixelColor(0, pixels.Color(0,0,0));
+      pixels.show();
       break;
     }
     printTime = millis();
@@ -145,6 +155,8 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
     Serial.println("EF 6");
     return true;
     theLCD.setPosition(2,0);theLCD.print("Heating Complete");
+    pixels.setPixelColor(0, pixels.Color(0,127,0));
+    pixels.show();
   }
   
 }
