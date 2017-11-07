@@ -12,7 +12,7 @@ const float maxTempSys2 = secondTemp + 3.0;
 //The pins that will be controlling the relay
 //Pin 13 ledPin is for debugging purposes only
 const int relayAPin = 8;
-const int relayBPin = 12;
+const int relayBPin = 9;
 const int ledPin = 13; // Used for debugging
 
 
@@ -25,7 +25,7 @@ const int sensor2 = 1; // Assigning analog pin A1 to variable 'sensor2'
  * Type 2: TMP36
 */
 
-const int sensorType = 2; //
+const int sensorType = 1; //
 
 /*--------------------------Cycle Controller Variables--------------------------------*/
 const long heatPhase1 = 5400000; //90 minutes to milliseconds 5400000

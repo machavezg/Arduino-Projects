@@ -153,7 +153,6 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
     tempControl(tempReading, numberOfHeaters, minTempSys1, maxTempSys1, false);
     printTime = millis();
     Serial.println("EF 6");
-    return true;
     theLCD.setPosition(2,0);theLCD.print("Heating Complete");
     pixels.setPixelColor(0, pixels.Color(0,127,0));
     pixels.show();
