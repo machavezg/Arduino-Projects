@@ -1,5 +1,5 @@
 //Aref voltage
-const float aref_voltage = 3.30;//3.43; //3.38;//4.80;//4.98; // tie 3.3V to ARef and measure it with a multimeter
+extern const float aref_voltage; 
 float tempc;  //variable to store temperature in degree Celsius
 float tempf;  //variable to store temperature in Fahreinheit 
 float vout;  //temporary variable to hold sensor reading

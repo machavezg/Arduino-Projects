@@ -5,11 +5,6 @@
  *  back.
  */
 
-#include <SoftwareSerial.h>
-#include <SerLCD.h>
-
-SoftwareSerial NSS(0,2);
-SerLCD theLCD(NSS);
 extern const float minTemp;
 extern const float maxTemp;
 int tim = 500;

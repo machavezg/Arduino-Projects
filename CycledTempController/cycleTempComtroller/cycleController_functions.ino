@@ -1,10 +1,9 @@
 
-
 extern const int led1pin;
 extern const int led2pin;
 
-extern const long heatPhase1;
-extern const long heatPhase2;
+extern const int heatPhase1;
+extern const int heatPhase2;
 
 extern const float minTempSys1;
 extern const float maxTempSys1;
@@ -99,6 +98,7 @@ void cycleHeat( float tempReading, int numberOfHeaters , float firstCycleTemp, f
       break;
     }
     printTime = millis();
+    
     theLCD.setPosition(2,0);theLCD.print("100F For 90min  ");
   }
   

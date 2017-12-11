@@ -3,11 +3,14 @@
 const float firstTemp = 100.0;
 const float secondTemp = 120.0;
 
-const float minTempSys1 = firstTemp - 2.0;
-const float maxTempSys1 = firstTemp + 3.0;
+const float tempUpperLimit = 3.0;
+const float tempLowerLimit = 2.0;
 
-const float minTempSys2 = secondTemp - 2.0;
-const float maxTempSys2 = secondTemp + 3.0;
+const float minTempSys1 = firstTemp - tempLowerLimit;
+const float maxTempSys1 = firstTemp + tempUpperLimit;
+
+const float minTempSys2 = secondTemp - tempLowerLimit;
+const float maxTempSys2 = secondTemp + tempUpperLimit;
 
 //The pins that will be controlling the relay
 //Pin 13 ledPin is for debugging purposes only
@@ -17,6 +20,8 @@ const int ledPin = 13; // Used for debugging
 
 
 /*--------------------------Temp Control Variables--------------------------------*/
+const float aref_voltage = 3.29;//3.43; //3.38;//4.80;//4.98; // tie 3.3V to ARef and measure it with a multimeter
+
 const int sensor1 = 0; // Assigning analog pin A0 to variable 'sensor1'
 const int sensor2 = 1; // Assigning analog pin A1 to variable 'sensor2'
 
@@ -25,11 +30,23 @@ const int sensor2 = 1; // Assigning analog pin A1 to variable 'sensor2'
  * Type 2: TMP36
 */
 
-const int sensorType = 1; //
+const int sensorType = 2; //
+
+//Number of heaters to control
+const int heatersToControl = 1; //enter 1 or 2
 
 /*--------------------------Cycle Controller Variables--------------------------------*/
-const long heatPhase1 = 5400000; //90 minutes to milliseconds 5400000
-const long heatPhase2 = 7200000; //120 minutes to milliseconds 7200000
+
+/*Fix this, Purpose is to input the value in minutes on the phase1Time and phase2Time
+const double phase1Time = .08; //minutes
+const double phase2Time = .08; //minutes
+
+const int min2ms = 60000; //minute to millisec multiplier
+*/
+
+//For now input the value of time in milliseconds below
+const int heatPhase1 = 5400000;//phase1Time * min2ms; //90 minutes to milliseconds 5400000
+const int heatPhase2 = 7200000;//phase2Time * min2ms; //120 minutes to milliseconds 7200000
 
 const int led1pin = 5;
 const int led2pin = 6;
