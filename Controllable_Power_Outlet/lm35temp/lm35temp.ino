@@ -24,7 +24,7 @@
  *    -(-) GND pin to GND ICSP
  *    -(CTRL1) pin to Digital 8
  *    If 2 Relays
- *    -(CTRL2) pin to Digital 12
+ *    -(CTRL2) pin to Digital 9
  *  DS3231 Pins:
  *    -(+) Vin pin to 5V
  *    -(-) to GND
@@ -41,6 +41,9 @@
  */
 extern const int sensor1; // Assigning analog pin A0 to variable 'sensor1' see tempSensor_Functions
 extern const int sensor2; // Assigning analog pin A1 to variable 'sensor2' see tempSensor_Functions
+extern const int sensorType;
+extern const int heatersToControl;
+
 
 extern const int PIXEL_PIN;    // Digital IO pin connected to the NeoPixels.
 extern const int PIXEL_COUNT;
@@ -48,7 +51,7 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_RGB + N
 
 void setup(){
   //Serial Mon to debug
-  Serial.begin(19200);
+  Serial.begin(9600);
   
   //LCD being initialized
   LCDsetup();
@@ -84,13 +87,13 @@ void setup(){
 void loop(){
   
   //Printing the Temp readings to LCD
-  printTempFahLCD(tempFahrenheit(sensor1));
+  printTempFahLCD(tempFahrenheit(sensor1, sensorType));
   
   //Printing the Temp readings to Monitor screen for debug
   //printTempSerialDebug(tempCelsius(sensor1),tempFahrenheit(sensor1));
 
   //Temperature Controller see relayController_functions
-  tempControl(tempFahrenheit(sensor1), 2); //tempControl(tempRead, oneOrTwo) tempRead is the temperature input from the sensor, oneOrTwo 1: for one heater, 2: for two heaters
+  tempControl(tempFahrenheit(sensor1, sensorType), heatersToControl); //tempControl(tempRead, oneOrTwo) tempRead is the temperature input from the sensor, oneOrTwo 1: for one heater, 2: for two heaters
   
   //Uncomment to Debug Temperature Controller see relayController_functions
   //tempControlDebug(tempFahrenheit(sensor1));
