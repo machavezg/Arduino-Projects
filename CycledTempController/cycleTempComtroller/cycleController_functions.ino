@@ -1,9 +1,6 @@
 
-extern const int led1pin;
-extern const int led2pin;
-
-extern const int heatPhase1;
-extern const int heatPhase2;
+extern const long heatPhase1;
+extern const long heatPhase2;
 
 extern const float minTempSys1;
 extern const float maxTempSys1;
@@ -27,19 +24,6 @@ extern bool indicatorLED;
 long printTime = 0;
 
 int count = 0;
-
-
-
-void doorOvenSetup() {
-  // put your setup code here, to run once:
-  pinMode(led1pin, OUTPUT);
-  pinMode(led2pin, OUTPUT);
-  digitalWrite(led1pin, HIGH);
-  digitalWrite(led2pin, HIGH);
-  delay(2000);
-  digitalWrite(led1pin, LOW);
-  digitalWrite(led2pin, LOW);
-}
 
 //Returns false as long as the time you need to wait has not passed
 bool timeWait(long timerVar, long timeToWait = 500) {

@@ -22,7 +22,6 @@ void setup() {
   tempControlSetup(2);
   LM35setup(1);
   cleanSetup();
-  doorOvenSetup();
   LCDComicSetup();
   printTempCycle();
   RGBLedSetup();

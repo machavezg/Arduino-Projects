@@ -3,6 +3,7 @@
 //Pin 13 ledPin is for debugging purposes only
 extern const int relayAPin;
 extern const int relayBPin;
+extern const int relayCPin;
 extern const int ledPin;
 // Calling temp from tempSensor_functions
 extern float temp;
@@ -14,6 +15,7 @@ void tempControlSetup(int numberOfSensors){
     case 1:
        pinMode(ledPin, OUTPUT);
        pinMode(relayAPin, OUTPUT);
+       digitalWrite(relayAPin, LOW);
        break;
     case 2:
        pinMode(ledPin, OUTPUT);
@@ -22,6 +24,15 @@ void tempControlSetup(int numberOfSensors){
        digitalWrite(relayAPin, LOW);
        digitalWrite(relayBPin, LOW);
        break;
+    case 3:
+       pinMode(ledPin, OUTPUT);
+       pinMode(relayAPin, OUTPUT);
+       pinMode(relayBPin, OUTPUT);
+       pinMode(relayCPin, OUTPUT);
+       digitalWrite(relayAPin, LOW);
+       digitalWrite(relayBPin, LOW);
+       digitalWrite(relayCPin, LOW);
+    break;
   }
 }
 
@@ -58,8 +69,8 @@ bool tempControl(float tempRead, int oneOrTwo, float minTemp, float maxTemp, boo
   }
 }
 
-void numberOfHeaters(int oneOrTwo, bool highOrLow) {
-  switch ( oneOrTwo ) {
+void numberOfHeaters(int heaterCount, bool highOrLow) {
+  switch ( heaterCount ) {
     case 1:
        digitalWrite(relayAPin, highOrLow);
        break;
@@ -67,5 +78,10 @@ void numberOfHeaters(int oneOrTwo, bool highOrLow) {
        digitalWrite(relayAPin, highOrLow);
        digitalWrite(relayBPin, highOrLow);
        break;
+    case 3:
+       digitalWrite(relayAPin, highOrLow);
+       digitalWrite(relayBPin, highOrLow);
+       digitalWrite(relayCPin, highOrLow);
+    break;
   }
 }
