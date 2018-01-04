@@ -45,9 +45,9 @@ extern const int sensorType;
 extern const int heatersToControl;
 
 
-extern const int PIXEL_PIN;    // Digital IO pin connected to the NeoPixels.
-extern const int PIXEL_COUNT;
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_RGB + NEO_KHZ800);
+extern const int pixelPin;    // Digital IO pin connected to the NeoPixels.
+extern const int pixelCount;
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(pixelCount, pixelPin, NEO_RGB + NEO_KHZ800);
 
 void setup(){
   //Serial Mon to debug

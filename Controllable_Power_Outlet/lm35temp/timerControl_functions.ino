@@ -10,10 +10,6 @@ extern int heaterStopTime;
 extern String heaterDayOff_1;
 extern String heaterDayOff_2;
 
-//Heater pins defined in relayController_functions
-extern const int relayAPin;
-extern const int relayBPin;
-
 //Future time variables
 const int futureDays    = 0;
 const int futureHours   = 0;
@@ -54,7 +50,6 @@ bool RTCPowerController() {
     } else {
       heaterStatus = false;
     }
-
     return heaterStatus;
 }
 

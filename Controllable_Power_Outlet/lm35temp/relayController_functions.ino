@@ -115,8 +115,8 @@ bool tempControl(float tempRead, int oneOrTwo){
   }
 }
 
-void numberOfHeaters(int oneOrTwo, bool highOrLow) {
-  switch ( oneOrTwo ) {
+void numberOfHeaters(int heaterCount, bool highOrLow) {
+  switch ( heaterCount ) {
     case 1:
        digitalWrite(relayAPin, highOrLow);
        break;
@@ -127,29 +127,7 @@ void numberOfHeaters(int oneOrTwo, bool highOrLow) {
     case 3:
        digitalWrite(relayAPin, highOrLow);
        digitalWrite(relayBPin, highOrLow);
+       digitalWrite(relayCPin, highOrLow);
     break;
-  }
-}
-
-// IGNORE THIS IF YOU DON'T KNOW THIS
-void tempControlDebug(float tempRead){
-  //Define min temp and max temp at top
-  if (tempRead <= maxTemp && tempRead <= minTemp){ //true as long as < minTemp
-    digitalWrite(relayAPin, HIGH);
-    digitalWrite(ledPin, HIGH);
-  } else if ( tempRead >= minTemp && tempRead <= maxTemp ){ //true as long as temF is between minTemp and maxTemp
-    digitalWrite(relayAPin, HIGH);
-    digitalWrite(ledPin, HIGH);
-  } else if ( tempRead >= maxTemp){
-    digitalWrite(relayAPin, LOW);
-    digitalWrite(ledPin, LOW);
-      while ( tempRead >= minTemp ){
-        digitalWrite(relayAPin, LOW);
-        digitalWrite(ledPin, LOW);
-        tempRead = temp;
-      }
-  } else{
-    digitalWrite(relayAPin, LOW);
-    digitalWrite(ledPin, LOW);
   }
 }

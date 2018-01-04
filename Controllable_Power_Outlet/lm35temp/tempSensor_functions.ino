@@ -5,7 +5,6 @@ float tempf;  //variable to store temperature in Fahreinheit
 float vout;  //temporary variable to hold sensor reading
 extern const int sensor1; // Assigning analog pin A0 to variable 'sensor1'
 extern const int sensor2; // Assigning analog pin A1 to variable 'sensor2'
-float temp = tempFahrenheit(sensor1, sensorType);
 
 //Sets up the LM35 sensor
 void LM35setup(int numberOfSensors){

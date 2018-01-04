@@ -6,7 +6,7 @@ const float maxTemp = 123;
 //Pin 13 ledPin is for debugging purposes only
 const int relayAPin = 8;
 const int relayBPin = 9;
-const int relayBPin = 10;
+const int relayCPin = 10;
 const int ledPin = 13; // Used for debugging
 
 
@@ -24,14 +24,14 @@ const int sensor2 = 1; // Assigning analog pin A1 to variable 'sensor2'
 const int sensorType = 2; //
 
 //Number of heaters to control
-const int heatersToControl = 1; //enter 1 or 2
+const int heatersToControl = 3; //enter 1 or 2
 
 /*--------------------------Timer Control Variables--------------------------------*/
 //0-24 Military Time
-int heaterStartTime = 7; 
-int heaterStopTime = 18;
+int heaterStartTime = 6; 
+int heaterStopTime = 23;
 //
-String heaterDayOff_1 = "Saturday";
+String heaterDayOff_1 = "Sunday";
 String heaterDayOff_2 = "Sunday";
 
 /*--------------------------Temp Cycle Variables--------------------------------*/
@@ -41,6 +41,6 @@ String adhesiveType = "1508WHITE";
 
 /*--------------------------LED Variables--------------------------------*/
 bool indicatorLED = false;
-const int PIXEL_PIN = 7;    // Digital IO pin connected to the NeoPixels.
-const int PIXEL_COUNT = 1;
+const int pixelPin = 7;    // Digital IO pin connected to the NeoPixels.
+const int pixelCount = 1;
 
