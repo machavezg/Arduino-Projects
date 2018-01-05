@@ -6,12 +6,12 @@ extern const int sensor1; // Assigning analog pin A0 to variable 'sensor1' see t
 extern const float firstTemp;
 extern const float secondTemp;
 extern const int sensorType;
-extern const int PIXEL_PIN;    // Digital IO pin connected to the NeoPixels.
-extern const int PIXEL_COUNT;
+extern const int pixelPin;    // Digital IO pin connected to the NeoPixels.
+extern const int pixelCount;
 extern const int heatersToControl;
+extern const int numberOfSensors;
 
-
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_RGB + NEO_KHZ800);
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(pixelCount, pixelPin, NEO_RGB + NEO_KHZ800);
 
 SoftwareSerial NSS(0,2);
 SerLCD theLCD(NSS);
@@ -19,8 +19,8 @@ SerLCD theLCD(NSS);
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  tempControlSetup(2);
-  LM35setup(1);
+  tempControlSetup(heatersToControl);
+  LM35setup(numberOfSensors);
   cleanSetup();
   LCDComicSetup();
   printTempCycle();
