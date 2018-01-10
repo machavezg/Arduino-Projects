@@ -19,7 +19,7 @@ For a while I've had a small solar panel, rechargeable battery and a solar batte
 
 Will be posting fritzing image.
 
-** Instructions **
+**Instructions**
 
 https://community.particle.io/t/serial-tutorial/26946
 https://www.dfrobot.com/product-1385.html
