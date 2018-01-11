@@ -14,21 +14,30 @@ My Threshold would be 2626
 */
 #define THRESHOLD           2626 
 #define SENSOR_PIN          A0 
-#define TEXTING_INTERVAL    1800000 //30 minutes (1000ms * 60s * 30mins) 
-int thresholdMet = false; 
+#define TEXTING_INTERVAL    10000 //30 minutes (1000ms * 60s * 30mins)
+bool textSent = false;
 unsigned long lastTextTime = 0; 
 void setup() { 
-   pinMode(SENSOR_PIN, INPUT); 
+    pinMode(SENSOR_PIN, INPUT); 
 } 
 void loop() { 
-   if (analogRead(SENSOR_PIN) > THRESHOLD) { 
-       thresholdMet = true; 
-       unsigned long now = millis(); 
-       if (now - lastTextTime >= TEXTING_INTERVAL) { 
-           Particle.publish("Water Me Now!"); 
-       } 
-   } 
-   else { 
-       thresholdMet = false; 
-   } 
+    int moistureLevel = analogRead(SENSOR_PIN);
+    if(moistureLevel > THRESHOLD && textSent == false) 
+    {
+        Spark.publish("moistureState","dry",60,PRIVATE);
+        textSent = true;
+        lastTextTime = millis();
+    } 
+    else if(moistureLevel > THRESHOLD && textSent == true)
+    { 
+        if ( millis() - lastTextTime > TEXTING_INTERVAL ) 
+        {
+            Spark.publish("moistureState","dry",60,PRIVATE);
+            lastTextTime = millis();
+        } 
+    }
+    else
+    {
+        textSent = false;
+    }
 }
