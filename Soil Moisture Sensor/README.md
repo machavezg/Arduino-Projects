@@ -17,7 +17,7 @@ For a while I've had a small solar panel, rechargeable battery and a solar batte
 
 **Wiring**
 
-Will be posting fritzing image.
+![schematic](https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Soil%20Moisture%20Sensor/images/schematic.png)
 
 **Instructions**
 
