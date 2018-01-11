@@ -21,6 +21,13 @@ For a while I've had a small solar panel, rechargeable battery and a solar batte
 
 **Instructions**
 
+1. Wire everything according to the schematic above.
+
+2. Run the [calibration](Calibration/moistureSensorV1.ino) code to obtain your 'Dry Condition' value and your 'Wet Condition' value and record that.
+
+![Dry Condition](https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Soil%20Moisture%20Sensor/images/dry.png)
+
+
 https://community.particle.io/t/serial-tutorial/26946
 
 https://www.dfrobot.com/product-1385.html
