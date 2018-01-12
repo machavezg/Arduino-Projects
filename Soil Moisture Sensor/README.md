@@ -29,7 +29,7 @@ For a while I've had a small solar panel, rechargeable battery and a solar batte
 ![Dry Condition](https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Soil%20Moisture%20Sensor/images/dry.png)
 - Wet Condition
 ![Wet Condition](https://github.com/machavezg9/RPi-Arduino-Projects/blob/master/Soil%20Moisture%20Sensor/images/wet.png)
-
+- Make note of your Dry and Wet condition values, subtract Dry-Wet to get your range, divide the result by 3 and subtract that result from your Dry condition to obtain your threshold. See below:
 
 https://community.particle.io/t/serial-tutorial/26946
 
