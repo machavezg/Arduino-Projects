@@ -23,7 +23,9 @@ My Threshold would be 452
 */
 #define SENSOR_PIN                    A0
 
-const int           threshold       = 2626;
+const int           dry             = 3150; //enter your measured value in dry condition
+const int           wet             = 1579; //enter your measured value in wet condition
+const int           threshold       = calcThreshold(dry, wet); //no need to do anything
 const unsigned long textingInterval = 1800000;//30 minutes (1000ms * 60s * 30mins)
 const unsigned long timeDelay       = 1000;
 unsigned long       lastTextTime    = 0;
@@ -36,43 +38,33 @@ bool timeWait(unsigned long timerVar, unsigned long timeToWait) {
   return millis() - timerVar > timeToWait;
 }
 
+int calcThreshold(int dry, int wet)  {
+    int threshold = dry - ( ( dry - wet ) / 3 );
+    return threshold;
+}
+
 void setup() { 
     pinMode(SENSOR_PIN, INPUT);
-    Serial.begin(9600);
-    
 } 
 void loop() { 
     int moistureLevel = analogRead(SENSOR_PIN);
-    if(moistureLevel > threshold && textSent == false && timeWait(waitDelay, timeDelay)  ) 
-    {
+    if( moistureLevel > threshold && textSent == false && timeWait(waitDelay, timeDelay)  ) {
         Spark.publish("moistureState","dry",60,PRIVATE);
         textSent = true;
         lastTextTime = millis();
         waitDelay = millis();
-        Serial.println("1st message Sent");
-        Serial.println(moistureLevel);
-    } 
-    else if(moistureLevel > threshold && textSent == true && timeWait(waitDelay, timeDelay) && timeWait(lastTextTime,textingInterval) )
-    { 
-      Spark.publish("moistureState","dry",60,PRIVATE);
-      lastTextTime = millis();
-      waitDelay = millis();
-      Serial.println("sent message again");
-      Serial.println(moistureLevel);
-    }
-    else
-    {
+    } else if( moistureLevel > threshold && textSent == true && timeWait(waitDelay, timeDelay) && timeWait(lastTextTime,textingInterval) ) { 
+        Spark.publish("moistureState","dry",60,PRIVATE);
+        lastTextTime = millis();
+        waitDelay = millis();
+    } else {
         if (  moistureLevel < threshold && timeWait(waitDelay, timeDelay) ) {
           textSent = false;
-          Serial.println("else 2");
-          Serial.println(moistureLevel);
           waitDelay = millis();
         } else {
-          if ( timeWait(waitDelay, timeDelay ) ) {
-            Serial.println("else");
-            Serial.println(moistureLevel);
-            waitDelay = millis();
-          }
+            if ( timeWait(waitDelay, timeDelay ) ) {
+                waitDelay = millis();
+            }
         }
     }
 }
